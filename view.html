@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Port de Barcelona. Biblioteca IFC</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="./static//apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./static//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./static//favicon-16x16.png">
+      </head>
+<header>
+    <a href="./"><img class="logo" src="./static/logo-port.jpg" alt="Port de Barcelona logo"></a>
+<!--     <h3>Port de Barcelona</h3> -->
+<!--     <h3>Prototipo - Biblioteca de Objetos IFC </h3> -->
+<a class="" href="./#biblioteca">Volver al listado</a>
+<h2 id="titulo">Port de Barcelona</h2>
+<div style="width: fit-content;min-width: 20%; display: flex;">
+<a class="button" id="descargaficha" href="" target="_blank">Descargar ficha</a>
+<a class="button" id="descarga" href="">Descargar IFC</a>
+</div>
+</header>
+<body>
+    <div id="viewer-container"></div>
+    <div class="ifc-property-menu">
+        <div class="ifc-property-head">
+            <div class="ifc-property-item">
+                <div>Parámetro</div>
+                <div class="ifc-property-value">Valor</div>
+            </div>
+        </div>
+        <div id="ifc-property-menu-root"></div>
+    </div>
+    <script src="./dist/bundle.js"></script>
+</body>
+</html>

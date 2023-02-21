@@ -1,0 +1,25 @@
+{
+  "name": "portbarcelona",
+  "version": "1.0.0",
+  "description": "Port de Barcelona",
+  "main": "app.js",
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js",
+    "start": "rollup -w -c ./rollup.config.js"
+  },
+  "author": "Ignacio",
+  "license": "ISC",
+  "dependencies": {
+    "camera-controls": "^1.37.3",
+    "fs-extra": "^10.1.0",
+    "fse": "^4.0.1",
+    "rollup-plugin-css-only": "^3.1.0",
+    "three": "^0.135.0",
+    "web-ifc-three": "^0.0.118",
+    "web-ifc-viewer": "^1.0.207"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.77.0"
+  }
+}
