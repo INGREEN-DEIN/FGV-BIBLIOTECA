@@ -22,7 +22,6 @@ searchBar.addEventListener('keyup', (e) => {
 }
 );
 
-
 const loadProjects = async () => {
     try {
         displayElements(projects);

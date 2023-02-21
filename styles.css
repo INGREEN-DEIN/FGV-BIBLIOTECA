@@ -143,6 +143,7 @@ header {
   position: relative;
   color: var(--light-gray);
   height: 15vh;
+  max-height:150px;
   padding: .5rem;
   display: flex;
   align-items: center;
@@ -533,4 +534,7 @@ canvas {
     width: 264px;
     height: 177px;
   }
+}
+.hidden {
+  display: none;
 }

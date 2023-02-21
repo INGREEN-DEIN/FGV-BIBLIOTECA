@@ -1,44 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <script>
-    // Get the back to top button
-    const backToTopButton = document.getElementById("back-to-top");
+<html lang="es">
 
-    // Set the point at which the button should appear
-    const showButtonThreshold = 400;
-
-    // Track the scroll position of the page
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > showButtonThreshold) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    });
-
-  </script>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Port de Barcelona. Biblioteca IFC</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./static//apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./static//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./static//favicon-16x16.png">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Port de Barcelona. Biblioteca IFC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./static//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./static//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./static//favicon-16x16.png">
+  
 </head>
+
 <body>
-    
-    <header>
-        <a href="./"><img class="logo" src="./static/logo-port.jpg" alt="Port de Barcelona logo"></a>
-<!--         <h3>Port de Barcelona</h3> -->
-        <h3>Prototipo - Biblioteca de Objetos IFC</h3>
-    </header>
 
-<!--hero section -->
+  <header>
+    <a href="./"><img class="logo" src="./static/logo-port.jpg" alt="Port de Barcelona logo"></a>
+    <!--         <h3>Port de Barcelona</h3> -->
+    <h3>Prototipo - Biblioteca de Objetos IFC</h3>
+  </header>
 
-<div class="header-banner">
+  <!--hero section -->
+
+  <div class="header-banner">
     <div class="container-width" id="iwcg">
       <div class="logo-container">
       </div>
@@ -46,48 +31,47 @@
       </div>
       <div class="row">
         <div class="cell">
-          <div class="lead-title" >Biblioteca de Objetos IFC del Planol del Port de Barcelona
+          <div class="lead-title">Biblioteca de Objetos IFC del Planol del Port de Barcelona
           </div>
-          <div class="sub-lead-title" >Descripción y objetivos del proyecto y de la plataforma en cuestión.
+          <div class="sub-lead-title">Explora los modelos BIM del Planol del Port de Barcelona y descarga los IFC y las
+            fichas.
             <a href="#biblioteca" class="button">Buscar objeto
             </a>
-        </div>
+          </div>
         </div>
         <div class="cell-header">
-          <img class="hero-image" src="./static/placeholder-ficha.jpg"/>
+          <img class="hero-image" src="./static/placeholder-ficha.jpg" />
         </div>
       </div>
     </div>
-</div>
-</div>  <div id="biblioteca">
-        <h1>Buscar Objetos </h1>
-        <div class="scrollmenu">
-            <a class="tag" href="#Cerramientos">Cerramientos</a>
-            <a class="tag" href="#Elementos portuarios">Elementos portuarios</a>
-            <a class="tag" href="#Elementos viales">Elementos viales</a>
-            <a class="tag" href="#Medios Operación">Medios Operación</a>
-            <a class="tag" href="#Logistica">Logistica</a>
-            <a class="tag" href="#Medios Transporte">Medios Transporte</a>
-            <a class="tag" href="#Mobiliario Urbano">Mobiliario Urbano</a>
-            <a class="tag" href="#Monumento">Monumento</a>
-            
-          
-          </div>
-        <div class="search-wrapper" id="buscador">
-            <input
-                type="text"
-                name="searchBar"
-                id="searchBar"
-                placeholder="Buscar objeto"
-            />
-        </div></div>
-        <ul id="projectList"></ul>
-        <a id="back-to-top"href=#biblioteca>
-          <button class="buttontop">Buscar</button>
-        </a>
-        
+  </div>
+  </div>
+  <div id="biblioteca">
+    <h1>Buscar Objetos </h1>
+    <div class="scrollmenu">
+      <a class="tag" href="#Cerramientos">Cerramientos</a>
+      <a class="tag" href="#Elementos portuarios">Elementos portuarios</a>
+      <a class="tag" href="#Elementos viales">Elementos viales</a>
+      <a class="tag" href="#Medios Operación">Medios Operación</a>
+      <a class="tag" href="#Logistica">Logistica</a>
+      <a class="tag" href="#Medios Transporte">Medios Transporte</a>
+      <a class="tag" href="#Mobiliario Urbano">Mobiliario Urbano</a>
+      <a class="tag" href="#Monumento">Monumento</a>
+
+
     </div>
-    <script type="module" src="./model-list.js"></script>
-    
+    <div class="search-wrapper" id="buscador">
+      <input type="text" name="searchBar" id="searchBar" placeholder="Buscar objeto" />
+    </div>
+  </div>
+  <ul id="projectList"></ul>
+  <a id="back-to-top" href=#biblioteca>
+    <button class="buttontop">Buscar</button>
+  </a>
+
+  </div>
+  <script type="module" src="./model-list.js"></script>
+
 </body>
+
 </html>
