@@ -18,9 +18,26 @@ searchBar.addEventListener('keyup', (e) => {
           } else {
             element.style.display = 'none';
              }
+         
     });
-}
-);
+
+    // check if there are visible category elements, otherwise hide the category title
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(category => {
+        const categoryElements = category.querySelectorAll('.element');
+        let elementsExist = false;
+        categoryElements.forEach(element => {
+            if (element.style.display !== 'none') {
+                elementsExist = true;
+            }
+        });
+        if (!elementsExist) {
+            category.style.display = 'none';
+        } else {
+            category.style.display = 'flex';
+        }
+    });
+});
 
 const loadProjects = async () => {
     try {
@@ -60,7 +77,7 @@ for (let i = 0; i < elements.length; i++) {
            </div></a>
            <div class="property-description">
            <h5> ${element.name} </h5>
-           <p class="lod">${element.lod}</p>
+           <p data-lod=${element.lod} class="lod">${element.lod}</p>
            </div>       
            <a href="#">
            </a>
@@ -69,11 +86,12 @@ for (let i = 0; i < elements.length; i++) {
        </div>
         `;
         projectElement.appendChild(elementElement);
-        elementsExist = true;
+        if (elementElement.style.display !== 'none') {
+            elementsExist = true;
+        }
     }
 
     if (!elementsExist) {
-        
         projectElement.style.display = 'none'
     }
 }
