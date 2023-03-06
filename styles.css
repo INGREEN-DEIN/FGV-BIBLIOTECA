@@ -377,7 +377,25 @@ canvas {
   border-radius: 1rem;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
+.lod[data-lod="LOD1"] {
 
+  /*   margin: 100px; */
+  padding: 5px 5px;
+  background: var(--light-gray);
+  width: fit-content;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: var(--blur-filter);
+  /*    border: none; */
+  border-radius: 1rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
 
 /* Property Cards Hover States */
 
@@ -537,4 +555,8 @@ canvas {
 }
 .hidden {
   display: none;
+}
+footer {
+min-height: 150px;
+
 }
