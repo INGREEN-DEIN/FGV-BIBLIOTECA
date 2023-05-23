@@ -121506,21 +121506,28 @@ async function loadIfc(url) {
     const ifcProject = await viewer.IFC.getSpatialStructure(model.modelID);
     console.log(ifcProject);
 
+
+    // Set the nesting level identifier based on the element URL
     let ident;
-    try {
-        ident = ifcProject.children[0].children[0].children[0].children[0].expressID;
-    } catch (error) {
+    //passing the IFCProject and IFCSite level for Buildings(containing de word "Edificio")
+    if (elementurl.includes('Edificio')) {
         ident = ifcProject.children[0].children[0].expressID;
+    } else {
+        try {
+            ident = ifcProject.children[0].children[0].children[0].children[0].expressID;
+        } catch (error) {
+            ident = ifcProject.children[0].children[0].expressID;
+        }
     }
-    //propiedades
+    //properties
     const properties = await viewer.IFC.getProperties(model.modelID, ident, true, false);
-    /*   console.log(properties); */
+    console.log(properties);
     createPropertiesMenu(properties);
     document.getElementById("titulo").innerHTML = properties.Name.value;
 
 
     function createPropertiesMenu(properties) {
-       removeAllChildren(propsGUI);
+        removeAllChildren(propsGUI);
 
         const psets = properties.psets;
         properties.mats;
@@ -121530,7 +121537,7 @@ async function loadIfc(url) {
         delete properties.mats;
         delete properties.type;
 
-        const psetProp = []; 
+        const psetProp = [];
 
         for (let key in psets) {
             for (let pset in psets[key].HasProperties) {
@@ -121538,7 +121545,7 @@ async function loadIfc(url) {
                 nameProperty(propSetId);
             }
         }
-        /* funcion que autoselecciona el modelo cargado y carga los psets a la lista psetProp*/
+        /* Load the property values for the given ID and create a menu entry */
         async function nameProperty(id, key) {
             customprop = await viewer.IFC.getProperties(model.modelID, id, true, false);
             psetProp.push(customprop); //ESTO ES PRESCINDIBLE   
@@ -121552,13 +121559,13 @@ async function loadIfc(url) {
     const bbox = items.ifcModels[0].geometry.boundingBox;
     console.log(bbox);
     /* viewer.context.fitToFrame(); */
-    }
+}
 
 const propsGUI = document.getElementById("ifc-property-menu-root");
 
 loadIfc(elementurl);
 
-//Crear entradas de propiedades
+//Create property entries
 
 function createPropertyEntry(key, value) {
 
@@ -121587,7 +121594,7 @@ function removeAllChildren(element) {
     }
 }
 
-//actualiza botón descargar
+//Update download button
 
 document.getElementById("descarga").href = elementurl;
 document.getElementById("descargaficha").href = elementFicha;

@@ -138,6 +138,11 @@ input {
   transition: all 0.3s ease 0s;
   max-height:15vh ;
 }
+.public {
+  width: 2rem;
+  /*    height: 2rem; */
+  max-height:10vh ;
+}
 
 header {
   position: relative;
@@ -193,6 +198,8 @@ h2 {
 h3 {
   font-weight: 400;
   font-size: 0.8rem;
+  display: flex;
+  align-items: center;
 }
 
 p {
