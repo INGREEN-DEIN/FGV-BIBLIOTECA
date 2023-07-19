@@ -121510,15 +121510,11 @@ async function loadIfc(url) {
     // Set the nesting level identifier based on the element URL
     let ident;
     //passing the IFCProject and IFCSite level for Buildings(containing de word "Edificio")
-    if (elementurl.includes('Edificio')) {
-        ident = ifcProject.children[0].children[0].expressID;
-    } else {
         try {
             ident = ifcProject.children[0].children[0].children[0].children[0].expressID;
         } catch (error) {
             ident = ifcProject.children[0].children[0].expressID;
         }
-    }
     //properties
     const properties = await viewer.IFC.getProperties(model.modelID, ident, true, false);
     console.log(properties);
